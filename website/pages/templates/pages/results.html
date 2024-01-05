@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tutorial Results</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	</head>
+	<body>
+		<nav class="navbar is-primary is-spaced">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-dark is-size-5" href="../">
+					<strong>CPS 530 - Bulma/Django</strong>
+				</a>
+				<a id="burger" class="navbar-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+			<div id="menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="../installation">
+						Installation
+					</a>
+					<a class="navbar-item" href="../tutorial">
+						Tutorial
+					</a>
+					<a class="navbar-item" href="">
+						Results
+					</a>
+					<a class="navbar-item" href="../conclusion">
+						Conclusion
+					</a>
+					<a class="navbar-item" href="../credits">
+						Credits
+					</a>
+				</div>
+			</div>
+		</nav>
+		{% load static %}
+		<script src="{% static 'pages/burger.js' %}"></script>
+		<section class="section">
+			<div class="has-text-centered">
+				<img style="margin-top: -30px" src="{% static 'pages/images/bulma-logo.png' %}" alt="Bulma Logo">
+			</div>
+			<form method="get" action="#">
+				<table class="table is-bordered container" border="3">
+					<tbody>
+						<tr>
+							<td colspan="4"><input class="input is-large is-danger is-size-4 has-text-right has-text-justified is-family-code" type="text" value="{{error}}{{result}}{{eval}}" style="width:275px" readonly></input></td>
+						</tr>
+						<tr>
+							<td colspan="4"><button class="button is-medium is-info is-family-code" type="submit" name="clear" style="width:275px">Clear</button></td>
+						</tr>
+						<tr>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}7" style="width:50px">7</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}8" style="width:50px">8</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}9" style="width:50px">9</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}/" style="width:50px">÷</button></td>
+						</tr>
+						<tr>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}4" style="width:50px">4</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}5" style="width:50px">5</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}6" style="width:50px">6</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}*" style="width:50px">*</button></td>
+						</tr>
+						<tr>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}1" style="width:50px">1</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}2" style="width:50px">2</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}3" style="width:50px">3</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}-" style="width:50px">-</button></td>
+						</tr>
+						<tr>
+							<td><button class="button is-medium is-family-code" name="delete" value="{{eval}}" style="width:50px">Del</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}0" style="width:50px">0</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}." style="width:50px">.</button></td>
+							<td><button class="button is-medium is-family-code" name="value" value="{{eval}}+" style="width:50px">+</button></td>
+						</tr>
+						<tr>
+							<td colspan="4"><button class="button is-medium is-info is-family-code" name="result" value="{{eval}}" style="width:275px">=</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			<div class="has-text-centered">
+				<img src="{% static 'pages/images/django-logo.png' %}" alt="Django Logo">
+			</div>
+		</section>
+	</body>
+</html>

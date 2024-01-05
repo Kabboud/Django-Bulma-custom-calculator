@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Installation</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	</head>
+	<body>
+		<nav class="navbar is-primary is-spaced">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-dark is-size-5" href="../">
+					<strong>CPS 530 - Bulma/Django</strong>
+				</a>
+				<a id="burger" class="navbar-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+			<div id="menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="">
+						Installation
+					</a>
+					<a class="navbar-item" href="../tutorial">
+						Tutorial
+					</a>
+					<a class="navbar-item" href="../results">
+						Results
+					</a>
+					<a class="navbar-item" href="../conclusion">
+						Conclusion
+					</a>
+					<a class="navbar-item" href="../credits">
+						Credits
+					</a>
+				</div>
+			</div>
+		</nav>
+		{% load static %}
+		<script src="{% static 'pages/burger.js' %}"></script>
+		<section class="section message">
+			<div class="message-header">
+				<p>Bulma Installation Instructions</p>
+			</div>
+			<div class="message-body">
+				Bulma is very easy to install since the framework is technically just one large css stylesheet.
+				<br><br>
+				<ol>
+					<li>Place the following code into your html file inside the &lt;head&gt; tag.</li>
+						<code class="language-html" data-lang="html">
+							<span style="word-break: break-all;">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"&gt;</span>
+						</code>
+					<li>You're all done!</li>
+				</ol><br>
+				Alternatively, you may also download the bulma css stylesheet and manually create your own link instead of using the one one.
+				<br><br>
+				<ol>
+					<li>Navigate to <a href="https://bulma.io/"><strong>https://bulma.io/</strong></a> and click the download button in the top right corner.</li>
+					<li>Open the provided zip folder and navigate to /bulma/css to extract the <strong>bulma.css</strong> file.</li>
+					<li>Place the following code into your html file inside the head tag (Don't forget to fill in the path to where you placed bulma.css).</li>
+						<code class="language-html" data-lang="html">
+							<span style="word-break: break-all;">&lt;link rel="stylesheet" href="(path to bulma.css)/bulma.css"&gt;</span>
+						</code>
+					<li>You're all done!</li>
+				</ol><br>
+			</div>
+		</section>
+		<section class="section message">
+			<div class="message-header">
+				<p>Django Installation Instructions</p>
+			</div>
+			<div class="message-body">
+				Installing Django is very easy, but requires a few dependencies. 
+				<br><br>
+				<ol>
+					<li>Ensure that you have python downloaded. You can get python <a href="https://www.python.org/downloads/"><strong>here</strong></a>.</li>
+					<li>(Optionally) Look into setting up a virtual environment where you can work with Django if you do not wish to install Django systemwide.</li>
+					<li>Enter the following command into your machine/virtual environment command line.</li>
+					<strong>Windows:</strong>
+					<code class="language-html" data-lang="html">
+						<span style="word-break: break-all;">py -m pip install Django</span>
+					</code><br>
+					<strong>UNIX / Linux:</strong>
+					<code class="language-html" data-lang="html">
+						<span style="word-break: break-all;">python -m pip install Django</span>
+					</code>
+					<li>You're all done!</li>
+				</ol>
+			</div>
+		</section>
+	</body>
+</html>

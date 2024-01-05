@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Project Credits</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	</head>
+	<body>
+		<nav class="navbar is-primary is-spaced">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-dark is-size-5" href="../">
+					<strong>CPS 530 - Bulma/Django</strong>
+				</a>
+				<a id="burger" class="navbar-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+			<div id="menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="../installation">
+						Installation
+					</a>
+					<a class="navbar-item" href="../tutorial">
+						Tutorial
+					</a>
+					<a class="navbar-item" href="../results">
+						Results
+					</a>
+					<a class="navbar-item" href="../conclusion">
+						Conclusion
+					</a>
+					<a class="navbar-item" href="">
+						Credits
+					</a>
+				</div>
+			</div>
+		</nav>
+		{% load static %}
+		<script src="{% static 'pages/burger.js' %}"></script>
+		<section class="section">
+			<div class="container">
+				<p class="title is-size-4-mobile">
+					Work Done By:
+				</p>
+				<p class="subtitle is-size-4">
+					Karim Abboud (HTML/JS/CSS/Bulma/Django/All Pages)
+				</p>
+				<br>
+				<p class="title is-size-4-mobile">
+					References:
+				</p>
+				<p class="subtitle is-size-4">
+					Resources used to learn relevant frameworks:<br>
+					<a href="https://docs.djangoproject.com/en/3.2/">Django Documentation</a><br>
+					<a href="https://bulma.io/documentation/">Bulma Documentation</a><br><br>
+					Resources used for Bulma framework information:<br>
+					<a href="https://www.lambdatest.com/blog/best-css-frameworks-2021/">Bulma Information (Strengths/Weaknesses)</a><br>
+					<a href="https://enlyft.com/tech/products/bulma">Bulma Industry Use Information</a><br><br>
+					Resources used for Django framework information:<br>
+					<a href="https://www.mindfiresolutions.com/blog/2018/04/advantages-and-disadvantages-of-django/">Django Information (Strengths/Weaknesses)</a><br>
+					<a href="https://en.wikipedia.org/wiki/Django_(web_framework)">Django General Information</a><br>
+					<a href="https://enlyft.com/tech/products/django">Django Industry Use Information</a><br>
+				</p>
+			</div>
+		</section>
+	</body>
+</html>

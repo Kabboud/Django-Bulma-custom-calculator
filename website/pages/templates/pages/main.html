@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CPS 530 Term Project</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	</head>
+	<body>
+		<nav class="navbar is-primary is-spaced">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-dark is-size-5" href="">
+					<strong>CPS 530 - Bulma/Django</strong>
+				</a>
+				<a id="burger" class="navbar-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+			<div id="menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="installation">
+						Installation
+					</a>
+					<a class="navbar-item" href="tutorial">
+						Tutorial
+					</a>
+					<a class="navbar-item" href="results">
+						Results
+					</a>
+					<a class="navbar-item" href="conclusion">
+						Conclusion
+					</a>
+					<a class="navbar-item" href="credits">
+						Credits
+					</a>
+				</div>
+			</div>
+		</nav>
+		{% load static %}
+		<script src="{% static 'pages/burger.js' %}"></script>
+		<section class="section">
+			<div class="has-text-centered">
+				<img class="mb-6 is-hidden-mobile is-hidden-tablet-only" src="{% static 'pages/images/bulma-logo.png' %}" alt="Bulma Logo">
+				<img class="is-hidden-desktop" src="{% static 'pages/images/bulma-logo.png' %}" alt="Bulma Logo">
+				<img class="is-hidden-mobile is-hidden-tablet-only" src="{% static 'pages/images/django-logo.png' %}" alt="Django Logo">
+			</div>
+			<h1 class="container has-text-centered title has-text-primary pt-5 is-size-1-desktop is-size-3-mobile">
+				All About Bulma
+			</h1>
+			<div class="container">
+				<p class="title is-size-4-mobile">
+					What is Bulma?
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma is a css framework much like bootstrap that is heavily based on flexbox. It is effectively one very large css stylesheet with a massive amount of classes that tries to incorporate scaling size changes depending on the viewport of the user.
+                    The effective goal of bulma is to reduce the amount of manual css coding that has to be done by hand in order to facilitate building attractive websites quickly.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-4-mobile">
+					Popularity
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma is not currently considered to be very popular among front-end frameworks. Much of the front-end space is occupied by other major giants like React, Angular, and Vue.js. However, among css frameworks, Bulma is fairly well-known, although still
+					not among the most commonly used frameworks. It is less popular in this regard than the major css frameworks like Tailwind and Bootstrap, but is around as popular as Foundation and Pure.css.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-4-mobile">
+					Strengths
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma is highly modular, very responsive, and contains a variety of built-in responsive templates that allow users to skip much of the hassle associated with making a website look sleek and modern.
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma has a very simple syntax that is easy to understand and use alongside excellent documentation that explains the less intuitive parts of the framework.
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma is used entirely through css, making it fantastic for users without a lot of background in website design as it requires the bare minimum of knowledge about website creation.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-4-mobile">
+					Weaknesses
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma is not massively popular and thus lacks a large development community.
+				</p>
+				<p class="subtitle is-size-6">
+					It is known to be a bit slow when used alongside Internet Explorer.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-4-mobile">
+					Industry & General Use
+				</p>
+				<p class="subtitle is-size-6">
+					Bulma is used by a number of companies, primarily in the United States. Most of the work Bulma is used for is in the computer software and information technology industries. It sees the most use by relatively small
+					companies employing somewhere between 10-50 employees. Some of the most well-known large companies/institutions that use Bulma include Taylor University, Texas State University, and Northwestern University.
+				</p>
+			</div>
+		</section>
+		<section class="section pt-0">
+			<div class="has-text-centered">
+				<img class="is-hidden-desktop" src="{% static 'pages/images/django-logo.png' %}" alt="Django Logo">
+			</div>
+			<h1 class="container has-text-success-dark has-text-centered title has-text-primary is-size-1-desktop is-size-4-mobile">
+				All About Django
+			</h1>
+			<div class="container">
+				<p class="title is-size-5-mobile">
+					What is Django?
+				</p>
+				<p class="subtitle is-size-6">
+					Django is a python-based open source backend development framework designed to make the creation of database-driven websites easy and quick. Django emphasizes the ideas of reuseability, low amounts of coding, and rapid development.
+					It is maintained by the Django Software Foundation.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-4-mobile">
+					Popularity
+				</p>
+				<p class="subtitle is-size-6">
+					Django is among the most popular backend frameworks currently being used in the industry. It is difficult to say with any accuracy where is it positioned among the other massive backend frameworks, but
+					it is easy to say that it is just as popular as major frameworks like Laravel, Ruby on Rails, Express.js, and Flask. It is likely that Django will continue to grow and maintain its popularity in
+					large part due to its python-based nature. Given that python is currently one of the most popular programming languages and continues to grow at a breakneck pace, Django will likely continue to reap the benefits
+					of this popularity.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-5-mobile">
+					Strengths
+				</p>
+				<p class="subtitle is-size-6">
+					Django is written in python and due to the nature of python being one of, if not the most popular programming language right now, Django can be very quick to pick up for prospective back-end developers familiar
+					with python.
+				</p>
+				<p class="subtitle is-size-6">
+					Django follows a "batteries-included" approach, emphasizing the availability of all resources needed by developers out of the box.
+				</p>
+				<p class="subtitle is-size-6">
+					Django is compatible with the majority of modern operating systems and database architectures making it easy to apply to almost any particular company's needs.
+				</p>
+				<p class="subtitle is-size-6">
+					Django's popularity means the framework has one of the largest and most active communities online supporting its development, making it easy to find specific information about how best
+					to apply the framework to one's needs.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-5-mobile">
+					Weaknesses
+				</p>
+				<p class="subtitle is-size-6">
+					Due to the nature of Django being a "batteries-included" framework, it is great for a lot of large web applications, but in the case of small applications where most features stay unused, Django can
+					be very large and unwieldy, which can effect the performance of small applications performing relatively simple operations by being slow to load or use due to the nature of its "packaging".
+				</p>
+				<p class="subtitle is-size-6">
+					Due to being a python-based framework, knowledge of the language is mandatory to be able to properly utilize the framework, adding an additional layer of knowledge to the requirements needed to be
+					able to use the framework effectively for those unfamiliar with python's conventions and style.
+				</p>
+				<hr>
+				<p class="title pt-5 is-size-5-mobile">
+					Industry & General Use
+				</p>
+				<p class="subtitle is-size-6">
+					Django sees use in a number of industries, with its largest share being from restaurant business websites, likely for maintaining database information and managing orders, reservations, and check-out systems. It
+					sees the most use by companies located in the United States and is used by companies of all sizes, although mostly by companies with between 1-200 employees. Some of the most famous services/institutions that use
+					Django include the University of Chicago, the Dow Chemical Company, Mozilla, and Instagram.
+				</p>
+			</div>
+		</section>
+	</body>
+</html>

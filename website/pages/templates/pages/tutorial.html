@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tutorial</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	</head>
+	<body>
+		<nav class="navbar is-primary is-spaced">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-dark is-size-5" href="../">
+					<strong>CPS 530 - Bulma/Django</strong>
+				</a>
+				<a id="burger" class="navbar-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+			</div>
+			<div id="menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="../installation">
+						Installation
+					</a>
+					<a class="navbar-item" href="">
+						Tutorial
+					</a>
+					<a class="navbar-item" href="../results">
+						Results
+					</a>
+					<a class="navbar-item" href="../conclusion">
+						Conclusion
+					</a>
+					<a class="navbar-item" href="../credits">
+						Credits
+					</a>
+				</div>
+			</div>
+		</nav>
+		{% load static %}
+		<script src="{% static 'pages/burger.js' %}"></script>
+		<section class="section message">
+			<div class="message-header">
+				<p>"Results" Page Creation Instructions</p>
+			</div>
+			<div class="message-body">
+				<strong>Here's a few Instructions on how we can set up a fairly simple and clean looking page featuring a fully functional calculator app using Bulma for our visual end and Django to communicate with our server and perform the calculations that the calculator will output.</strong>
+				<br><br>
+				<ol>
+					<li>We'll begin by setting up a simple html table to facilitate a nice graphical interface for our calculator. This way, we can simply adjust table cell sizing in order to form the "chassis" of our calculator.</li>
+					<li>We can use a couple of bulma classes here to make our table look a little bit cleaner. We'll use the "table" class so the table is in line with how the bulma style is supposed to look as well as the "is-bordered" class to more clearly outline the individual cells of the table. Finally, we will use the "container" class to center the whole chassis.</li>
+					<li>Next up, to create the actual buttons for numbers and operations in our calculator, we are going to use an html form. We will want the table we initially created to be inside the form. This way, we can use the buttons as submissions to our server so that we can keep track of numbers and operations as the user inputs them. We will want to place the buttons in such a way that each cell of the table is used by one button.</li>
+					<li>As before, we will use the "button" class so that the button reflects the general bulma style as well as the "is-medium" class to make the buttons a little bigger. Finally, let's make the text a little bit nicer looking by using a different font. We will use one of bulma's font class' "is-family-code"</li>
+					<li>Finally, now that we have all the buttons set up, we need somewhere to display our calculations and results, so we will use an input field as part of our form. We will want to set this to readonly, so that user's can only use it as a display and not somewhere to actually input information. </li>
+					<li>We'll make this input field larger to differentiate it a bit more from our buttons through the "is-large" class. We will further differentiate it by giving it a red outline with the "is-danger" class. Finally, we want our calculations and results to be right-justified, so we will use the "has-text-right" and "has-text-justified" classes. </li>
+					<li>Finally, we'll touch up everything with some custom width's using basic css for the buttons and input field to make them more cleanly align with the frame of the table.</li>
+					<li>We're going to use the get method in our form to send data to our server. Our "action" will just be the current page.</li>
+					<li>Let's quickly add some images to the top and bottom of the page to give the page a bit more life. We'll do this by adding a div above and under the form we created. These div's should have the "has-text-centered" class so that the images are centered nicely on the page. Within these div's we'll add an image of our choice. </li>
+					<li>With that, our calculator chassis is fully built through Bulma. We'll proceed by giving each button functionality using Django. This will mostly be done in a seperate python file, though we will need to make some small additions to the html that forms our "results" page.</li>
+				</ol><br>
+				<strong>Let's proceed with Django!</strong>
+				<br><br>
+				<ol>
+					<li>The functionality of our calculator will be done entirely through our views.py file that manages the template of our website's pages.</li>
+					<li>We will setup each of the buttons to have different names that can be parsed by django. To the number and operation buttons (with the exception of "="), we will give the name "value". The "=" will get the name "result" and the delete button will get the name "delete". The clear button will get the name "clear" for uniformity, but this will not be explicitly used. </li>
+					<li>Next, lets program our calculations performance in python. Since the form sends get requests, we will build an if..elif..else block that handles these requests based on the the name of the request.</li>
+					<li>We will use python's eval() function to perform calculations on strings that we will build as the calculator is used.</li>
+					<li>If the name is "value", our if block will set the evalString to the value provided by the get request (The value clicked by the user). We will then return a render of the page with this value stored in the variable "eval".</li>
+				    <li>If the name is "result", we will take the string stored in the "value" attribute of the result get request and send it to the eval() method to produce the result of our calculation. We will then return a render of the page with the result stored in the "result" variable rather than "eval".</li>
+				    <li>We will need to use exception handling here in case the user puts in invalid input. We will set up of exception handler to catch Zero Division Errors and return a message letting the user know they attempted to divide by 0. Otherwise, we will catch syntaxError's and return a message letting the user know they put in invalid input. These errors will be returned using variable "error" rather than "eval".</li>
+				    <li>If the name is "delete", we will use string slicing to remove the last character entered and then return a render with the edited evalString in the "eval" variable.</li>
+				    <li>If the name is none of the above, then we will simply return a render of the page in its default state.</li>
+				    <li>So far, we've set up the calculations portion of the page, but we still need to display the contents of the "eval" variable that we've been sending back to our html form as well as set up the values associated with the buttons that we will be sending to our python code.</li>
+				    <li>To do this, we will set the value field of each of our buttons (except "Clear" and "=") to be "{{eval}}X". The {{eval}} in django syntax means we are attempting to access the value stored in the variable "eval". The X is the symbol or number of the button we are pressing. So essentially, we are saying, take the current value of "eval" and append the most recently clicked button to the end of it. In this way, we are building the string we will use for calculations.</li>
+				    <li>All that's left to do now, is give a value to our "=" button as well as our display "input" field. The "=" button should have the value {{eval}}, because when it is clicked the statement that needs to be evaluated is complete and does not need anything appended to the end. As for the input field, it will be given the value "{{error}}{{result}}{{eval}}". This way, it will display errors and results of calculations while allowing the user to continue inputting afterwards without appending to the end of the error messages, since the value of buttons will only take the {{eval}} variable.</li>
+				    <li>Finally, we are done, and have successfully built a fully functioning calculator application page. The only real issue with it is since each button technically acts as a submission, the page refreshes fully each time a button is clicked. It would be much more effecient to program most or potentially all of this application through javascript and jquery so that calculations occur more seamlessly, but for the sake of demonstrating django, we use it exclusively to demonstrate that it is possible.</li>
+				</ol>
+			</div>
+		</section>
+	</body>
+</html>
